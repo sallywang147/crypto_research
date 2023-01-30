@@ -1,0 +1,267 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_187fe/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_187fe.dir/build.make CMakeFiles/cmTC_187fe.dir/build
+gmake[1]: Entering directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o -c /Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+Apple clang version 14.0.0 (clang-1400.0.29.102)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -funwind-tables=2 -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 819.6 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -cxx-isystem /usr/local/opt/llvm/include/c++/v1 -cxx-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-cast-function-type -Wno-bitwise-instead-of-logical -fdeprecated-macro -fdebug-compilation-dir=/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 (clang-1400.0.29.102) default target x86_64-apple-darwin21.6.0
+ignoring nonexistent directory "/usr/local/opt/llvm/include/c++/v1"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1
+ /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_187fe
+/Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_187fe.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names /usr/local/include/palisade -v -Wl,-v CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_187fe 
+Apple clang version 14.0.0 (clang-1400.0.29.102)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_187fe -L. -L/usr/local/palisade "-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade" -L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib -search_paths_first -headerpad_max_install_names /usr/local/include/palisade -v CMakeFiles/cmTC_187fe.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-819.6
+BUILD 14:58:37 Aug  5 2022
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+Library search paths:
+	.
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/
+ld: can't map file, errno=22 file '/usr/local/include/palisade' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_187fe.dir/build.make:100: cmTC_187fe] Error 1
+gmake[1]: Leaving directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_187fe/fast] Error 2
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_f30f5/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_f30f5.dir/build.make CMakeFiles/cmTC_f30f5.dir/build
+gmake[1]: Entering directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f30f5.dir/testCXXCompiler.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_f30f5.dir/testCXXCompiler.cxx.o -MF CMakeFiles/cmTC_f30f5.dir/testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_f30f5.dir/testCXXCompiler.cxx.o -c /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_f30f5
+/Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f30f5.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names /usr/local/include/palisade  CMakeFiles/cmTC_f30f5.dir/testCXXCompiler.cxx.o -o cmTC_f30f5 
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+ld: can't map file, errno=22 file '/usr/local/include/palisade' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_f30f5.dir/build.make:100: cmTC_f30f5] Error 1
+gmake[1]: Leaving directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f30f5/fast] Error 2
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_bd8f0/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_bd8f0.dir/build.make CMakeFiles/cmTC_bd8f0.dir/build
+gmake[1]: Entering directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o -c /Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+Apple clang version 14.0.0 (clang-1400.0.29.102)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -funwind-tables=2 -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 819.6 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -cxx-isystem /usr/local/opt/llvm/include/c++/v1 -cxx-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-cast-function-type -Wno-bitwise-instead-of-logical -fdeprecated-macro -fdebug-compilation-dir=/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 (clang-1400.0.29.102) default target x86_64-apple-darwin21.6.0
+ignoring nonexistent directory "/usr/local/opt/llvm/include/c++/v1"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1
+ /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_bd8f0
+/Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd8f0.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names /usr/local/include/palisade -v -Wl,-v CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bd8f0 
+Apple clang version 14.0.0 (clang-1400.0.29.102)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_bd8f0 -L. -L/usr/local/palisade "-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade" -L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib -search_paths_first -headerpad_max_install_names /usr/local/include/palisade -v CMakeFiles/cmTC_bd8f0.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-819.6
+BUILD 14:58:37 Aug  5 2022
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+Library search paths:
+	.
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/
+ld: can't map file, errno=22 file '/usr/local/include/palisade' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_bd8f0.dir/build.make:100: cmTC_bd8f0] Error 1
+gmake[1]: Leaving directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_bd8f0/fast] Error 2
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_18f34/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_18f34.dir/build.make CMakeFiles/cmTC_18f34.dir/build
+gmake[1]: Entering directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_18f34.dir/testCXXCompiler.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_18f34.dir/testCXXCompiler.cxx.o -MF CMakeFiles/cmTC_18f34.dir/testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_18f34.dir/testCXXCompiler.cxx.o -c /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_18f34
+/Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18f34.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names /usr/local/include/palisade  CMakeFiles/cmTC_18f34.dir/testCXXCompiler.cxx.o -o cmTC_18f34 
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+ld: can't map file, errno=22 file '/usr/local/include/palisade' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_18f34.dir/build.make:100: cmTC_18f34] Error 1
+gmake[1]: Leaving directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_18f34/fast] Error 2
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_e70dc/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_e70dc.dir/build.make CMakeFiles/cmTC_e70dc.dir/build
+gmake[1]: Entering directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o -c /Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+Apple clang version 14.0.0 (clang-1400.0.29.102)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -funwind-tables=2 -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 819.6 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -cxx-isystem /usr/local/opt/llvm/include/c++/v1 -cxx-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-cast-function-type -Wno-bitwise-instead-of-logical -fdeprecated-macro -fdebug-compilation-dir=/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 (clang-1400.0.29.102) default target x86_64-apple-darwin21.6.0
+ignoring nonexistent directory "/usr/local/opt/llvm/include/c++/v1"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1
+ /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_e70dc
+/Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e70dc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names /usr/local/include/palisade -v -Wl,-v CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_e70dc 
+Apple clang version 14.0.0 (clang-1400.0.29.102)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_e70dc -L. -L/usr/local/palisade "-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade" -L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib -search_paths_first -headerpad_max_install_names /usr/local/include/palisade -v CMakeFiles/cmTC_e70dc.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-819.6
+BUILD 14:58:37 Aug  5 2022
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+Library search paths:
+	.
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/
+ld: can't map file, errno=22 file '/usr/local/include/palisade' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_e70dc.dir/build.make:100: cmTC_e70dc] Error 1
+gmake[1]: Leaving directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_e70dc/fast] Error 2
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_723b2/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_723b2.dir/build.make CMakeFiles/cmTC_723b2.dir/build
+gmake[1]: Entering directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_723b2.dir/testCXXCompiler.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_723b2.dir/testCXXCompiler.cxx.o -MF CMakeFiles/cmTC_723b2.dir/testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_723b2.dir/testCXXCompiler.cxx.o -c /Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_723b2
+/Users/sallywang/opt/miniconda3/lib/python3.9/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_723b2.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names /usr/local/include/palisade  CMakeFiles/cmTC_723b2.dir/testCXXCompiler.cxx.o -o cmTC_723b2 
+ld: warning: directory not found for option '-L/usr/local/palisade'
+ld: warning: directory not found for option '-L/usr/local/include/palisade /usr/local/include/palisade /usr/local/include/palisade'
+ld: warning: directory not found for option '-L/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib'
+ld: can't map file, errno=22 file '/usr/local/include/palisade' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_723b2.dir/build.make:100: cmTC_723b2] Error 1
+gmake[1]: Leaving directory '/Users/sallywang/crypto_research/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_723b2/fast] Error 2
+
+
+
