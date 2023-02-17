@@ -68,7 +68,7 @@ void preparingDatabase(int numOfDataPieces){
 
     srand (time(NULL));
     //this is (n = 512, q = 2^50, sigma = 3,2)
-    auto params = PVWParam(512, 1125899906842624, 3.2, 16000, 1); // The last "1" means it is an LWE sample. "PVW" is an LWE-based encryption system, when ell = 1, it is exactly what we have talked about. 
+    auto params = PVWParam(512, pow(2.0, 50), 3.2, 16000, 1); // The last "1" means it is an LWE sample. "PVW" is an LWE-based encryption system, when ell = 1, it is exactly what we have talked about. 
     auto sk = PVWGenerateSecretKeyBinary(params, 32);
     for(int i = 0; i < params.ell; i++){
         cout << sk[i] << endl;
