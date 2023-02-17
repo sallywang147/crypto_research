@@ -36,11 +36,11 @@ void saveData(const PVWCiphertext& ct, int transaction_num){
     datafile.open ("../LWEdata/datafile.txt", fstream::app|fstream::out);
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        printf("this is a[i] in saveData(): \n", ct.a[i]);
+        printf("this is a[i] in saveData():  %ld\n", ct.a[i]);
         datafile << ct.a[i].ConvertToInt() << ", ";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        printf("this is b[i] in saveData(): \n", ct.b[i]);
+        printf("this is b[i] in saveData():  %ld\n", ct.b[i]);
         datafile << ct.b[i].ConvertToInt() << "\n";
     }
 
@@ -58,11 +58,11 @@ void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
     std::mt19937 generator(rd());
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        printf("this is a[i] in saveRandomizedData(): \n", ct.b[i]);
+        printf("this is a[i] in saveRandomizedData(): %ld\n", ct.b[i]);
         datafile << ct.a[i].ConvertToInt() << ", ";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        printf("this is random number generated from generator(): \n",generator());
+        printf("this is random number generated from generator():  %ld\n",generator());
         datafile << generator() << "\n";
     }
     datafile.close();
