@@ -6,8 +6,8 @@
 
 
 PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
-    int n = param.n;
-    int q = param.q;
+    long n = param.n;
+    long q = param.q;
 
     std::vector<int> theones;
     for (int i = 0; i < n; ++i)

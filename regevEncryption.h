@@ -8,8 +8,8 @@ using namespace std;
 using namespace lbcrypto;
 
 struct regevParam{
-    int n;
-    int q;
+    long n;
+    long q;
     double std_dev;
     int m;
     regevParam(){
@@ -41,8 +41,8 @@ void regevDec(int& msg, const regevCiphertext& ct, const regevSK& sk, const rege
 /////////////////////////////////////////////////////////////////// Below are implementation
 
 regevSK regevGenerateSecretKey(const regevParam& param){
-    int n = param.n;
-    int q = param.q;
+    long n = param.n;
+    long q = param.q;
     lbcrypto::TernaryUniformGeneratorImpl<regevSK> tug;
     return tug.GenerateVector(n, q);
 }
@@ -88,7 +88,7 @@ void regevEncPK(regevCiphertext& ct, const int& msg, const regevPK& pk, const re
 
 void regevDec(int& msg, const regevCiphertext& ct, const regevSK& sk, const regevParam& param){
     NativeInteger q = param.q;
-    int n = param.n;
+    long n = param.n;
     NativeInteger inner(0);
     NativeInteger r = ct.b;
     NativeInteger mu = q.ComputeMu();
@@ -106,8 +106,8 @@ void regevDec(int& msg, const regevCiphertext& ct, const regevSK& sk, const rege
 ///////////////////////////////////////////////////////////
 
 struct PVWParam{
-    int n;
-    int q;
+    long n;
+    long q;
     double std_dev;
     int m;
     int ell;
@@ -118,7 +118,7 @@ struct PVWParam{
         m = 16000; 
         ell = 4;
     }
-    PVWParam(int n, int q, double std_dev, int m, int ell)
+    PVWParam(long n, long q, double std_dev, int m, int ell)
     : n(n), q(q), std_dev(std_dev), m(m), ell(ell)
     {}
 };
@@ -141,8 +141,8 @@ void PVWDec(vector<int>& msg, const PVWCiphertext& ct, const PVWsk& sk, const PV
 /////////////////////////////////////////////////////////////////// Below are implementation
 
 PVWsk PVWGenerateSecretKey(const PVWParam& param){
-    int n = param.n;
-    int q = param.q;
+    long n = param.n;
+    long q = param.q;
     lbcrypto::DiscreteUniformGeneratorImpl<regevSK> dug;
     dug.SetModulus(q);
     PVWsk ret(param.ell);
@@ -154,7 +154,7 @@ PVWsk PVWGenerateSecretKey(const PVWParam& param){
 
 void PVWEncSK(PVWCiphertext& ct, const vector<int>& msg, const PVWsk& sk, const PVWParam& param, const bool& pk_gen){
     NativeInteger q = param.q;
-    int n = param.n;
+    long n = param.n;
     int ell = param.ell;
     DiscreteUniformGeneratorImpl<NativeVector> dug;
     dug.SetModulus(q);
@@ -206,7 +206,7 @@ void PVWEncPK(PVWCiphertext& ct, const vector<int>& msg, const PVWpk& pk, const 
 void PVWDec(vector<int>& msg, const PVWCiphertext& ct, const PVWsk& sk, const PVWParam& param){
     msg.resize(param.ell);
     NativeInteger q = param.q;
-    int n = param.n;
+    long n = param.n;
 
     for(int j = 0; j < param.ell; j++){
         NativeInteger inner(0);
