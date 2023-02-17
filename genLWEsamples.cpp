@@ -1,4 +1,9 @@
 #include "regevEncryption.h"
+#include<cmath>
+#include <random>
+#include <iostream>
+#include <ctime>
+
 
 PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
     int n = param.n;
@@ -28,12 +33,14 @@ PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
 
 void saveData(const PVWCiphertext& ct, int transaction_num){
     ofstream datafile;
-    datafile.open ("../LWEdata/datafile.txt", fstream::app);
+    datafile.open ("../LWEdata/datafile.txt", fstream::app|fstream::out);
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
+        printf("this is a[i] in saveData(): \n", ct.a[i]);
         datafile << ct.a[i].ConvertToInt() << ", ";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
+        printf("this is b[i] in saveData(): \n", ct.b[i]);
         datafile << ct.b[i].ConvertToInt() << "\n";
     }
 
@@ -41,10 +48,31 @@ void saveData(const PVWCiphertext& ct, int transaction_num){
 }
 
 
+void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
+    ofstream datafile;
+    datafile.open ("../LWEdata/randata.txt", fstream::app|fstream::out);
+
+    //https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library
+    //MSR talk on why we should use the following: https://www.youtube.com/watch?v=LDPMpc-ENqY
+    std::random_device rd; //this is seed
+    std::mt19937 generator(rd());
+
+    for(size_t i = 0; i < ct.a.GetLength(); i++){
+        printf("this is a[i] in saveRandomizedData(): \n", ct.b[i]);
+        datafile << ct.a[i].ConvertToInt() << ", ";
+    }
+    for(size_t i = 0; i < ct.b.GetLength(); i++){
+        printf("this is random number generated from generator(): \n",generator());
+        datafile << generator() << "\n";
+    }
+    datafile.close();
+}
+
 void preparingDatabase(int numOfDataPieces){
 
     srand (time(NULL));
-    auto params = PVWParam(512, 1073741824, 3.2, 16000, 1); // The last "1" means it is an LWE sample. "PVW" is an LWE-based encryption system, when ell = 1, it is exactly what we have talked about. 
+
+    auto params = PVWParam(512, pow(2.0, 50), 3.2, 16000, 1); // The last "1" means it is an LWE sample. "PVW" is an LWE-based encryption system, when ell = 1, it is exactly what we have talked about. 
     auto sk = PVWGenerateSecretKeyBinary(params, 32);
     for(int i = 0; i < params.ell; i++){
         cout << sk[i] << endl;
@@ -54,11 +82,13 @@ void preparingDatabase(int numOfDataPieces){
     vector<int> ones(params.ell, 1);
 
 #pragma omp parallel for
+//this is for non-randomized (a, b) pairs
     for(int i = 0; i < numOfDataPieces; i++){
         if(i < numOfDataPieces/2){
             PVWCiphertext tempclue;
             PVWEncSK(tempclue, zeros, sk, params);
             saveData(tempclue, i);
+            saveRandomizedData(tempclue, i);
             // vector<int> tmp;
             // PVWDec(tmp, tempclue, sk, params);
             // for(int i = 0; i < params.ell; i++){
@@ -68,6 +98,7 @@ void preparingDatabase(int numOfDataPieces){
             PVWCiphertext tempclue;
             PVWEncSK(tempclue, ones, sk, params);
             saveData(tempclue, i);
+            saveRandomizedData(tempclue, i);
             // vector<int> tmp;
             // PVWDec(tmp, tempclue, sk, params);
             // for(int i = 0; i < params.ell; i++){
@@ -75,9 +106,11 @@ void preparingDatabase(int numOfDataPieces){
             // }
         }
     }
+
     return;
 }
 
 int main(){
-    preparingDatabase(10000000);
+    //let's get 100 data points first to avoid unnecessarily large files 
+    preparingDatabase(100);
 }
