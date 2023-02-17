@@ -32,14 +32,16 @@ PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
 }
 
 void saveData(const PVWCiphertext& ct, int transaction_num){
-    ofstream datafile;
-    datafile.open ("../LWEdata/datafile.txt", fstream::app|fstream::out);
+    ofstream datafile_a;
+    ofstream datafile_b;
+    datafile.open ("../LWEdata/datafile_a.txt", fstream::app|fstream::out);
+    datafile.open ("../LWEdata/datafile_b.txt", fstream::app|fstream::out);
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile << ct.a[i].ConvertToInt() << ", ";
+        datafile_a << ct.a[i].ConvertToInt() << "\n";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile << ct.b[i].ConvertToInt() << "\n";
+        datafile_b << ct.b[i].ConvertToInt() << "\n";
     }
 
     datafile.close();
@@ -47,8 +49,10 @@ void saveData(const PVWCiphertext& ct, int transaction_num){
 
 
 void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
-    ofstream datafile;
-    datafile.open ("../LWEdata/randata.txt", fstream::app|fstream::out);
+    ofstream datafile_a;
+    ofstream datafile_b;
+    datafile.open("../LWEdata/randata_a.txt", fstream::app|fstream::out);
+    datafile.open("../LWEdata/randata_b.txt", fstream::app|fstream::out);
 
     //https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library
     //MSR talk on why we should use the following: https://www.youtube.com/watch?v=LDPMpc-ENqY
@@ -56,10 +60,10 @@ void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
     std::mt19937 generator(rd());
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile << ct.a[i].ConvertToInt() << ", ";
+        datafile_a << ct.a[i].ConvertToInt() << "\n ";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile << generator() << "\n";
+        datafile_b << generator() << "\n";
     }
     datafile.close();
 }
