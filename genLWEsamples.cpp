@@ -61,7 +61,7 @@ void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
     std::mt19937 generator(rd());
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile_a << ct.a[i].ConvertToInt() << "\n ";
+        datafile_a << ct.a[i].ConvertToInt() << "\n";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
         datafile_b << generator() << "\n";
@@ -113,6 +113,6 @@ void preparingDatabase(int numOfDataPieces){
 }
 
 int main(){
-    //let's get 100 data points first to avoid unnecessarily large files 
-    preparingDatabase(100);
+    //let's get 51200 data points first to avoid unnecessarily large files 
+    preparingDatabase(51200);
 }
