@@ -1,5 +1,4 @@
 #include "regevEncryption.h"
-#include "fhew.h"
 #include<cmath>
 #include <random>
 #include <iostream>
@@ -47,25 +46,24 @@ void saveData(const PVWCiphertext& ct, int transaction_num){
 }
 
 
-void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
+void saveRandomizedData(const PVWCiphertext& ct, const PVWParam& param, int transaction_num){
     
     ofstream datafile;
-
+    long n = param.n;
+    long q = param.q;
     datafile.open("../LWEdata/randata.txt", fstream::app|fstream::out);
 
     //https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library
     //MSR talk on why we should use the following: https://www.youtube.com/watch?v=LDPMpc-ENqY
-    DiscreteUniformGeneratorImpl<NativeVector> dug;
-    const std::shared_ptr<RingGSWCryptoParams> params;
-    const shared_ptr<ILNativeParams> polyParams = params->GetPolyParams();
-    dug.SetModulus(Q);
+    lbcrypto::DiscreteUniformGeneratorImpl<NativeVector> dug;
+    dug.SetModulus(q);
 
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile << NativePoly(dug, polyParams, Format::COEFFICIENT) << "\n";
+        datafile << dug.GenerateInteger(n) << "\n";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile << NativePoly(dug, polyParams, Format::COEFFICIENT) << "\n";
+        datafile << dug.GenerateInteger(n); << "\n";
     }
     datafile.close();
 }
@@ -90,7 +88,7 @@ void preparingDatabase(int numOfDataPieces){
             PVWCiphertext tempclue;
             PVWEncSK(tempclue, zeros, sk, params);
             saveData(tempclue, i);
-            saveRandomizedData(tempclue, i);
+            saveRandomizedData(tempclue, params , i);
             // vector<int> tmp;
             // PVWDec(tmp, tempclue, sk, params);
             // for(int i = 0; i < params.ell; i++){
@@ -100,7 +98,7 @@ void preparingDatabase(int numOfDataPieces){
             PVWCiphertext tempclue;
             PVWEncSK(tempclue, ones, sk, params);
             saveData(tempclue, i);
-            saveRandomizedData(tempclue, i);
+            saveRandomizedData(tempclue, params, i);
             // vector<int> tmp;
             // PVWDec(tmp, tempclue, sk, params);
             // for(int i = 0; i < params.ell; i++){
