@@ -1,4 +1,5 @@
 #include "regevEncryption.h"
+#include "fhew.h"
 #include<cmath>
 #include <random>
 #include <iostream>
@@ -32,42 +33,41 @@ PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
 }
 
 void saveData(const PVWCiphertext& ct, int transaction_num){
-    ofstream datafile_a;
-    ofstream datafile_b;
-    datafile_a.open ("../LWEdata/datafile_a.txt", fstream::app|fstream::out);
-    datafile_b.open ("../LWEdata/datafile_b.txt", fstream::app|fstream::out);
 
+    ofstream datafile;
+    datafile.open ("../LWEdata/datafile.txt", fstream::app|fstream::out);
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile_a << ct.a[i].ConvertToInt() << "\n";
+        datafile << ct.a[i].ConvertToInt() << "\n";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile_b << ct.b[i].ConvertToInt() << "\n";
+        datafile << ct.b[i].ConvertToInt() << "\n";
     }
 
-    datafile_a.close();
-     datafile_b.close();
+    datafile.close();
 }
 
 
 void saveRandomizedData(const PVWCiphertext& ct, int transaction_num){
-    ofstream datafile_a;
-    ofstream datafile_b;
-    datafile_a.open("../LWEdata/randata_a.txt", fstream::app|fstream::out);
-    datafile_b.open("../LWEdata/randata_b.txt", fstream::app|fstream::out);
+    
+    ofstream datafile;
+
+    datafile.open("../LWEdata/randata.txt", fstream::app|fstream::out);
 
     //https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library
     //MSR talk on why we should use the following: https://www.youtube.com/watch?v=LDPMpc-ENqY
-    std::random_device rd; //this is seed
-    std::mt19937 generator(rd());
+    DiscreteUniformGeneratorImpl<NativeVector> dug;
+    const std::shared_ptr<RingGSWCryptoParams> params;
+    const shared_ptr<ILNativeParams> polyParams = params->GetPolyParams();
+    dug.SetModulus(Q);
+
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile_a << ct.a[i].ConvertToInt() << "\n";
+        datafile << NativePoly(dug, polyParams, Format::COEFFICIENT) << "\n";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile_b << generator() << "\n";
+        datafile << NativePoly(dug, polyParams, Format::COEFFICIENT) << "\n";
     }
-    datafile_a.close();
-    datafile_b.close();
+    datafile.close();
 }
 
 void preparingDatabase(int numOfDataPieces){
