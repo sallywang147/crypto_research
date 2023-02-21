@@ -60,10 +60,10 @@ void saveRandomizedData(const PVWCiphertext& ct, const PVWParam& param, int tran
 
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile << dug.GenerateInteger(n) << "\n";
+        datafile << dug.GenerateInteger() << "\n";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile << dug.GenerateInteger(n); << "\n";
+        datafile << dug.GenerateInteger(); << "\n";
     }
     datafile.close();
 }
