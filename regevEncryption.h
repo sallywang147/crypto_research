@@ -143,7 +143,45 @@ void PVWDec(vector<int>& msg, const PVWCiphertext& ct, const PVWsk& sk, const PV
 PVWsk PVWGenerateSecretKey(const PVWParam& param){
     long n = param.n;
     long q = param.q;
+    //we change it to ternaryuniformgenerator: which gives tenary keys; keep everything else
+    //the same
+    //write nwe function called generated tenary key 
     lbcrypto::DiscreteUniformGeneratorImpl<regevSK> dug;
+    dug.SetModulus(q);
+    PVWsk ret(param.ell);
+    for(int i = 0; i < param.ell; i++){
+        ret[i] = dug.GenerateVector(n);
+    }
+    return ret;
+}
+
+
+
+//TODO: PVWsk PVWGenerateTenaryKey
+
+
+PVWsk PVWGenerateTenaryKey(const PVWParam& param){
+    long n = param.n;
+    long q = param.q;
+    //we change it to ternaryuniformgenerator: which gives tenary keys; keep everything else
+    //the same
+    //write nwe function called generated tenary key 
+    lbcrypto::TernaryUniformGeneratorImpl<regevSK> dug;
+    dug.SetModulus(q);
+    PVWsk ret(param.ell);
+    for(int i = 0; i < param.ell; i++){
+        ret[i] = dug.GenerateVector(n);
+    }
+    return ret;
+}
+
+/*TODO: no hamming weeight*/
+PVWsk PVWGenerate_no_hamming_weight_Key(const PVWParam& param){
+    long n = param.n;
+    long q = param.q;
+
+    //change to binary  
+    lbcrypto::BinaryUniformGeneratorImpl<regevSK> dug;
     dug.SetModulus(q);
     PVWsk ret(param.ell);
     for(int i = 0; i < param.ell; i++){

@@ -4,7 +4,10 @@
 #include <iostream>
 #include <ctime>
 
-
+//https://sagecell.sagemath.org/
+//https://bitbucket.org/malb/lwe-estimator/raw/HEAD/estimator.py
+//higher hamming weights and n increases security bits: hw and n are the only two param
+//we need to tweak
 PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
     long n = param.n;
     long q = param.q;
@@ -34,14 +37,14 @@ PVWsk PVWGenerateSecretKeyBinary(const PVWParam& param, int hamming_weight){
 void saveData(const PVWCiphertext& ct, int transaction_num){
 
     ofstream datafile;
-    datafile.open ("../LWEdata/datafile.txt", fstream::app|fstream::out);
+    datafile.open ("../LWEdata/tenary.txt", fstream::app|fstream::out);
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile << ct.a[i].ConvertToInt() << "\n";
+        datafile << ct.a[i].ConvertToInt() << ",";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile << ct.b[i].ConvertToInt() << "\n";
+        datafile << ct.b[i].ConvertToInt() << ",";
     }
-
+    datafile << "\n";
     datafile.close();
 }
 
@@ -51,7 +54,7 @@ void saveRandomizedData(const PVWCiphertext& ct, const PVWParam& param, int tran
     ofstream datafile;
     long n = param.n;
     long q = param.q;
-    datafile.open("../LWEdata/randata.txt", fstream::app|fstream::out);
+    datafile.open("../LWEdata/randtenary.txt", fstream::app|fstream::out);
 
     //https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library
     //MSR talk on why we should use the following: https://www.youtube.com/watch?v=LDPMpc-ENqY
@@ -60,11 +63,12 @@ void saveRandomizedData(const PVWCiphertext& ct, const PVWParam& param, int tran
 
 
     for(size_t i = 0; i < ct.a.GetLength(); i++){
-        datafile << dug.GenerateInteger() << "\n";
+        datafile << dug.GenerateInteger() << ",";
     }
     for(size_t i = 0; i < ct.b.GetLength(); i++){
-        datafile << dug.GenerateInteger(); << "\n";
+        datafile << dug.GenerateInteger(); << ",";
     }
+    datafile << "\n";
     datafile.close();
 }
 
@@ -73,7 +77,10 @@ void preparingDatabase(int numOfDataPieces){
     srand (time(NULL));
     //this is (n = 512, q = 2^50, sigma = 3,2)
     auto params = PVWParam(512, pow(2.0, 50), 3.2, 16000, 1); // The last "1" means it is an LWE sample. "PVW" is an LWE-based encryption system, when ell = 1, it is exactly what we have talked about. 
-    auto sk = PVWGenerateSecretKeyBinary(params, 32);
+   //this function hsould be updated 
+   //use this func: regevGenerateSecretKey from h file
+    auto sk = PVWGenerateTenaryKey(params, 32);
+
     for(int i = 0; i < params.ell; i++){
         cout << sk[i] << endl;
     }
